@@ -5,7 +5,7 @@ import numpy as np
 df = pyupbit.get_ohlcv("KRW-BTC", count=7)
 
 # 변동폭 * k 계산, (고가 - 저가) * k값
-df['range'] = (df['high'] - df['low']) * 0.5
+df['range'] = (df['high'] - df['low']) * 0.2
 
 # target(매수가), range 컬럼을 한칸씩 밑으로 내림(.shift(1))
 df['target'] = df['open'] + df['range'].shift(1)
